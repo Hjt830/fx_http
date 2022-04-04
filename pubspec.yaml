@@ -1,7 +1,6 @@
 name: fx_http
 description: Teeup for flutter http request Tool
-version: 0.1.2
-author: kenter
+version: 0.0.1
 homepage: https://github.com/teeup-flutter/fx_http.git
 
 environment:
