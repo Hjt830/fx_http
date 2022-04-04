@@ -1,0 +1,44 @@
+import 'package:dio/dio.dart';
+
+class ExceptionHandler {
+  static const int success = 200;
+  static const int success_not_content = 204;
+  static const int serverException = 400;
+  static const int unauthorized = 401;
+  static const int forbidden = 403;
+  static const int not_found = 404;
+
+  static const int net_error = 1000;
+  static const int parse_error = 1001;
+  static const int socket_error = 1002;
+  static const int http_error = 1003;
+  static const int timeout_error = 1004;
+  static const int cancel_error = 1005;
+  static const int unknown_error = 9999;
+
+  static NetError handleException(dynamic error) {
+    print(error);
+    if (error is DioError) {
+      if (error.type == DioErrorType.response) {
+        return NetError(serverException, '服务器异常！');
+      } else if (error.type == DioErrorType.connectTimeout ||
+          error.type == DioErrorType.sendTimeout ||
+          error.type == DioErrorType.receiveTimeout) {
+        return NetError(timeout_error, '连接超时！');
+      } else if (error.type == DioErrorType.cancel) {
+        return NetError(cancel_error, '取消请求');
+      } else {
+        return NetError(unknown_error, '未知异常');
+      }
+    } else {
+      return NetError(unknown_error, '未知异常');
+    }
+  }
+}
+
+class NetError{
+  int code;
+  String msg;
+
+  NetError(this.code, this.msg);
+}
