@@ -1,12 +1,8 @@
 # fx_http
 
-### name: fx_http
-### version: 0.0.1
-### author: kenter
-### homePage: https://github.com/Hjt830/fx_http.git
-### description: 一个基础的flutter网络请求工具，包含多种请求方式，自动数据转模型
+一个基础的flutter网络请求工具，包含多种请求方式，自动数据转模型
 
-## Getting Started
+可在 pub.dev 搜索 **'fx_http'** 使用
 
 ### 核心类 DioUtil
 #### 1、配置 -- 使用前必须先初始化，指定接口服务器地址:
