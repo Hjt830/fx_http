@@ -1,7 +1,7 @@
 name: fx_http
 description: Teeup for flutter http request Tool
 version: 0.0.1
-homepage: https://github.com/teeup-flutter/fx_http.git
+homepage: https://github.com/Hjt830/fx_http.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
